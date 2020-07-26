@@ -251,7 +251,7 @@ class ShopPage extends React.Component {
                         }
                     ]
                     }
-              ]
+            ]
         }
     }
     render() { 
