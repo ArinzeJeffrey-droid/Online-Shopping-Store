@@ -5,9 +5,17 @@ import {Route, Switch} from "react-router-dom"
 import ShopPage from './pages/shop-page/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up-page/sign-in-and-sign-up-page.component';
+import { auth } from "./firebase/firebase.util"
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      currentUser: null
+    }
+  }
+  render (){
+    return (
     <div>
     <Header/>
       <Switch>
@@ -17,6 +25,7 @@ function App() {
       </Switch>
     </div>
   );
+  }
 }
 
 export default App;
