@@ -8,14 +8,7 @@ const COLLECTION_ID_MAP = {
     mens: 5
 }
 
-export const selectCollection = collectionUrlParam => {
-    createSelector(
-        [selectCollections],
-        collections => collections.find(
-            collections.id === COLLECTION_ID_MAP[collectionUrlParam]
-        )
-    )
-}
+
 
 const selectShop = state => state.shop
 
@@ -24,3 +17,12 @@ export const selectCollections = createSelector(
     [selectShop],
     shop => shop.collections
 )
+
+export const selectCollection = collectionUrlParam =>
+    createSelector(
+        [selectCollections],
+        collections =>
+        collections.find(
+            collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
+        )
+    )
